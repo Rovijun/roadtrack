@@ -29,18 +29,7 @@ conn.connect(function(error){
 //recherche itinéraire
 app.get('/itineraire/:ville', function(req, res){
   const { ville } = req.params
-  conn.query(`SELECT city1, city2, city3, city4 FROM itinerary WHERE city1 LIKE '%${ville}%' OR city2 LIKE '%${ville}%' OR city3 LIKE '%${ville}%' OR city4 LIKE '%${ville}%'`, function(error, rows, fields){
-      if(error) console.log(error);
-      else {
-        console.log(rows);
-        res.send(rows);
-      }
-  });
-});
-
-//Toutes les villes
-app.get('/ville', function(req, res){
-  conn.query('SELECT * FROM ville', function(error, rows, fields){
+  conn.query(`SELECT city1, city2, city3, city4, image FROM itinerary WHERE city1 LIKE '%${ville}%' OR city2 LIKE '%${ville}%' OR city3 LIKE '%${ville}%' OR city4 LIKE '%${ville}%'`, function(error, rows, fields){
       if(error) console.log(error);
       else {
         console.log(rows);

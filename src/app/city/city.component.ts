@@ -18,7 +18,6 @@ export class CityComponent implements OnInit {
   ngOnInit() {
     this.cityService.getItinerary(this.search).subscribe(res => {
       this.city = res;
-      console.log(res)
     });
   }
 
@@ -26,20 +25,17 @@ export class CityComponent implements OnInit {
     const searchBar = args.object as SearchBar;
     this.search = searchBar.text;
     this.ngOnInit();
-    console.log(`Searching for ${this.search}`);
   }
 
   onTextChanged(args) {
     const searchBar = args.object as SearchBar;
     this.search = searchBar.text;
     this.ngOnInit();
-    console.log(`Input changed! New value: ${this.search}`);
   }
 
   onClear(args) {
     const searchBar = args.object as SearchBar;
     this.ngOnInit();
-    console.log(`Clear event raised`);
   }
 
 }
