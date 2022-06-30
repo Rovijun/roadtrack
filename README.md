@@ -12,7 +12,6 @@
 - ```DB_PASS=```
 - ```DB_BASE=```
 - ```PORTS=```
-- ```IP_CLIENT=```
 
 **Note :** la base de donnée du projet est sur mysql, à bien vérifier les variables demandées dans le fichier `.env`
 
