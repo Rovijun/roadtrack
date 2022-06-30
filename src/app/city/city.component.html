@@ -10,7 +10,7 @@ So you can still use template expressions, bindings, templates as well as all th
 The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 http://docs.nativescript.org/ui/action-bar
 -->
-<ActionBar title="My App"> </ActionBar>
+<ActionBar title="Road Tracker"> </ActionBar>
 
 <!--
 The GridLayout arranges its child elements in a table structure of rows and columns.
@@ -22,12 +22,24 @@ These components make use of the NativeScript core theme, which styles them with
 The theme also provides a set of helper class names such as p-20, h1, h2, and text-center to enhance styling.
 You can learn more about the NativeScript core theme at https://github.com/nativescript/theme
 -->
-<GridLayout>
-  <ListView [items]="items">
+
+<StackLayout>
+
+    <SearchBar hint="Tapez votre itinéraire ..."
+      [text]="search" (textChange)="onTextChanged($event)"
+      (clear)="onClear($event)" (submit)="onSubmit($event)">
+    </SearchBar>
+
+<Label [text]="search" class="h2"></Label>
+
+<ListView  *ngIf="search" [items]="city">
     <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
-        <Label [text]="item.name"></Label>
+      <StackLayout orientation="horizontal">
+        <Label [text]="item.city1"></Label>
+        <Label [text]="item.city2"></Label>
+        <Label [text]="item.city3"></Label>
+        <Label [text]="item.city4"></Label>
       </StackLayout>
     </ng-template>
-  </ListView>
-</GridLayout>
+</ListView>
+</StackLayout>
