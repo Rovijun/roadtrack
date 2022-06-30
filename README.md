@@ -6,13 +6,13 @@
 2. Pour chaque dossier track et Backend, tapez le script suivant : `npm install`
 3. Dans le dossier back à rajouter un fichier `.env` pour les variables de l'environnement back
 
-- ```DB_HOST=localhost```
-- ```DB_PORT=3306```
-- ```DB_USER=root```
+- ```DB_HOST=```
+- ```DB_PORT=```
+- ```DB_USER=```
 - ```DB_PASS=```
-- ```DB_BASE=sully2```
-- ```PORTS=3000```
-- ```IP_CLIENT=192.168.0.99```
+- ```DB_BASE=```
+- ```PORTS=```
+- ```IP_CLIENT=```
 
 **Note :** la base de donnée du projet est sur mysql, à bien vérifier les variables demandées dans le fichier `.env`
 
